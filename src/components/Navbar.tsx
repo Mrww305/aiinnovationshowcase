@@ -6,7 +6,8 @@ const navLinks = [
   { label: 'Capabilities', href: '#capabilities' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Process', href: '#process' },
-  { label: 'ROI Calculator', href: '#roi' },
+  { label: 'ROI', href: '#roi' },
+  { label: 'About', href: '#about' },
   { label: 'FAQ', href: '#faq' },
 ];
 

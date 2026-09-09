@@ -196,18 +196,52 @@ export default function Footer() {
 
         {/* Bottom footer */}
         <div className="mt-20 pt-8 border-t border-white/5">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-md bg-gradient-to-br from-[#00F2FE] to-[#7F00FF] flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-7 h-7 rounded-md bg-gradient-to-br from-[#00F2FE] to-[#7F00FF] flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-sm font-semibold">
+                  <span className="text-white">Aiagents</span>
+                  <span className="text-[#00F2FE]">.Megnitoo</span>
+                </span>
               </div>
-              <span className="text-sm font-semibold">
-                <span className="text-white">Aiagents</span>
-                <span className="text-[#00F2FE]">.Megnitoo</span>
-              </span>
+              <p className="text-xs text-[#8A8A9A] leading-relaxed">
+                Custom AI agent development and workflow automation by <strong className="text-white">Sajid Afridi</strong>, AI Infrastructure Engineer.
+              </p>
             </div>
+            <div>
+              <h4 className="text-xs font-semibold text-white mb-3">Services</h4>
+              <ul className="space-y-2">
+                <li><a href="#capabilities" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">AI Agent Development</a></li>
+                <li><a href="#capabilities" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">Multi-Agent Systems</a></li>
+                <li><a href="#capabilities" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">RAG Knowledge Agents</a></li>
+                <li><a href="#capabilities" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">Workflow Automation</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-xs font-semibold text-white mb-3">Technologies</h4>
+              <ul className="space-y-2">
+                <li><span className="text-xs text-[#8A8A9A]">LangChain & LlamaIndex</span></li>
+                <li><span className="text-xs text-[#8A8A9A]">OpenAI & Anthropic Claude</span></li>
+                <li><span className="text-xs text-[#8A8A9A]">Meta Llama 3 & Mistral</span></li>
+                <li><span className="text-xs text-[#8A8A9A]">AutoGen & CrewAI</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-xs font-semibold text-white mb-3">Company</h4>
+              <ul className="space-y-2">
+                <li><a href="#about" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">About Sajid Afridi</a></li>
+                <li><a href="#case-studies" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">Case Studies</a></li>
+                <li><a href="#process" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">Our Process</a></li>
+                <li><a href="#contact" className="text-xs text-[#8A8A9A] hover:text-[#00F2FE] transition-colors">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-[#8A8A9A]">
-              © 2024 Aiagents.Megnitoo. All rights reserved. Production-Ready AI Solutions.
+              © 2024 Aiagents.Megnitoo — Founded by <strong className="text-white">Sajid Afridi</strong>, AI Infrastructure Engineer. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-xs text-[#8A8A9A] hover:text-white transition-colors">Privacy</a>

@@ -111,6 +111,8 @@ export default function Capabilities() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => setActiveAgent(agent.id)}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 className={`relative p-4 rounded-xl text-left transition-all duration-300 group ${
                   activeAgent === agent.id
                     ? 'glass-strong border border-white/10'
