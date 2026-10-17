@@ -1,26 +1,17 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aiagents.megnitoo.com/sitemap.xml
-
-# AI Crawlers
+# AI crawlers
 User-agent: GPTBot
 Allow: /
 
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Google-Extended
 Allow: /
 
-User-agent: Claude-Web
-Allow: /
+Sitemap: https://megnitoocorporate.sajidafridi.com/sitemap.xml

@@ -1,0 +1,29 @@
+# Sajid Afridi — AI Infrastructure Engineer | Custom AI Agents & Multi-Agent Systems | Aiagents.Megnitoo
+
+> Sajid Afridi, AI Infrastructure Engineer and founder of Aiagents.Megnitoo. We build production-ready custom AI agents, multi-agent systems, RAG pipelines, and enterprise workflow automation. Specializing in LangChain, AutoGen, LlamaIndex, OpenAI, Claude, and Llama 3 deployments.
+
+## Author
+
+- Name: Sajid Afridi
+- Handle: mrww305
+- Role: AI Governance Architect, MLOps & Zero Trust Architect
+- Canonical profile: https://sajidafridi.com
+- This site: https://megnitoocorporate.sajidafridi.com/
+
+## Identity
+
+- LinkedIn: https://www.linkedin.com/in/mr305afridi
+- GitHub: https://github.com/Mrww305
+- Kaggle: https://www.kaggle.com/mrww305
+- MegniToo: https://megnitoo.com
+- Pakistan Red Team: https://pakistanredteam.com
+- AIPakistani: https://aipakistani.com
+
+## Portfolio
+
+- Deep Space CV: https://sajidafridi.com
+- About: https://sajidafridi.com/about/
+- Experience: https://sajidafridi.com/experience/
+- Projects: https://sajidafridi.com/projects/
+- Live lab: https://sajidafridi.com/lab/
+- Contact: https://sajidafridi.com/contact/
