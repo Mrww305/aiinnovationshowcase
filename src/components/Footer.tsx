@@ -10,12 +10,47 @@ export default function Footer() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: '', email: '', company: '', message: '' });
+    if (sending) return;
+
+    // Shared intake on the main domain; the source tag names this property.
+    const composed = [
+      formData.company ? `Company: ${formData.company}` : '',
+      '',
+      formData.message,
+    ].filter(Boolean).join('\n');
+
+    setSending(true);
+    setError('');
+
+    try {
+      const response = await fetch('https://sajidafridi.com/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: composed,
+          source: 'megnitoocorporate',
+        }),
+      });
+      const payload = (await response.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!response.ok || payload.ok !== true) {
+        throw new Error(payload.error || 'send_failed');
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', company: '', message: '' });
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch {
+      setError('Could not send right now. Email ceo@megnitoo.com directly.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -107,20 +142,26 @@ export default function Footer() {
                   <label className="text-xs text-[#8A8A9A] mb-1.5 block">How can we help?</label>
                   <textarea
                     rows={4}
+                    required
+                    minLength={10}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white text-sm placeholder:text-[#8A8A9A]/50 focus:outline-none focus:border-[#00F2FE]/50 transition-colors resize-none"
                     placeholder="Tell us about your automation needs..."
                   />
                 </div>
+                {error && (
+                  <p className="text-xs text-rose-400" role="alert">{error}</p>
+                )}
                 <motion.button
                   type="submit"
+                  disabled={sending}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
-                  className="w-full btn-glow py-3.5 rounded-lg font-semibold text-sm bg-gradient-to-r from-[#00F2FE] to-[#7F00FF] text-white flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(0,242,254,0.3)] transition-all"
+                  className="w-full btn-glow py-3.5 rounded-lg font-semibold text-sm bg-gradient-to-r from-[#00F2FE] to-[#7F00FF] text-white flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(0,242,254,0.3)] transition-all disabled:cursor-wait disabled:opacity-60"
                 >
                   <Mail className="w-4 h-4" />
-                  Request Free Consultation
+                  {sending ? 'Sending…' : 'Request Free Consultation'}
                   <ArrowRight className="w-4 h-4" />
                 </motion.button>
               </div>
